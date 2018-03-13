@@ -1,0 +1,26 @@
+body{
+  width: 450px;
+  height: 582px;
+  border-radius: 4px;
+  margin-left: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
+  background-color: #DCD7EA
+    
+}
+
+.canvasContainer{
+  background-color: #B5AACF;
+  box-shadow: 4px 4px 10px black;
+  border-radius: 4px;
+}
+
+
+.showIcons{
+  background-color: #432F75;
+  box-shadow: 4px 4px 10px black;
+  border-radius: 4px;
+}
+textarea{
+  min-height: 208px;
+}
