@@ -1,7 +1,3 @@
-/*! Raygun4js - v2.3.1 - 2016-04-13
-* https://github.com/MindscapeHQ/raygun4js
-* Copyright (c) 2016 MindscapeHQ; Licensed MIT */
-
 var captureTabId = function(input){
   console.log(input);
   return input - 1;
@@ -20,31 +16,42 @@ var captureTabId = function(input){
   chrome.tabs.executeScript(null,{file:"content.js"});
 });*/
 
+let capturedData = {
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  //console.log(sender.tab ? "from a content script:" + sender.tab.url : "from the extension");
-  console.log("Evaluate the three parameters of onMessage listener in BG");
-  console.log(response);
+  emails: []
 
-  console.log(sender.tab.id)
+}
 
-  console.log(sender);
 
-  sendResponse("I think the BG heard watson talk");
+chrome.runtime.onMessage.addListener(
+ 
+  function(request, sender, sendResponse) {
+    
+    console.log(sender.tab ?
+                "from a content script:" + sender.tab.url :
+                "from the extension");
+    
+    if (request){
+      
+      console.log("request: ", request.foundEmails);
+      
+      capturedData.emails = request.foundEmails;
+      
+      if(capturedData.emails.length > 0 ){
+        sendResponse({capturedEmails: capturedData.emails });
+      }else{
+        sendResponse('found no emails to return to content script please check your code');
+      }
+    
+    }else{
 
-});
+      console.log("what the fuck. No request found");
 
-chrome.tabs.onRemoved.addListener(function(tabId, removeInfo){
-  //alert("!! Exiting the Browser !! " + tabId);
-  //console.log(removeInfo);
-  //console.log(tabId);
-  var exited = new Date();
-  timeDifference.timeExited = exited.getTime();
-  myFirebaseRef.orderByChild('tID').equalTo(tabId).on('value', function(snapshot) {
+    }
+  }
+);
 
-    console.log(snapshot.val());
-
-    console.log(timeDifference.timeExited - timeDifference.timeEntered + " For Tab id :" + tabId);
-  });
+chrome.tabs.onRemoved.addListener( (tabId, removeInfo) => {  
+  
 });
 

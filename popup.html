@@ -1,159 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Recurly HelpScout</title>
+	<title>HelpScout CrateJoy</title>
 	
-	<script crossorigin="anonymous" type='text/javascript' src="js/raygun.min.js"></script>
-  <script type='text/javascript' src="js/Chart.min.js" ></script>
-  <script type="text/javascript" src="js/gmail.js"></script>
-  <script type='text/javascript' src="js/main.js"></script>
- 	
+	<!--
+		<script crossorigin="anonymous" type='text/javascript' src="js/raygun.min.js"></script>
+		<script type='text/javascript' src="js/Chart.min.js" ></script>
+	
+	<script type="text/javascript" src="js/gmail.js"></script>
+	<script type='text/javascript' src="js/main.js"></script>
+	 
+	-->
+	
  	<link type="text/css" href="css/popup_main.css" rel="stylesheet">
-  <link type="text/css" href="css/pure.min.css" rel="stylesheet">
 
 </head>
 <body>
-<h3>Get Recurly from HelpScout</h3>
+<h1>Lets Do Mudwtr</h3>
 <hr>
-<!-- 
-	<h3>Appointment?</h3>
-	<select name="time" class="apptInfo" id="appointmentTime">
-		<option value="8:30 AM">8:30 AM</option>
-		<option value="8:45 AM">8:45 AM</option>
-
-		<option value="9:00 AM">9:00 AM</option>
-		<option value="9:15 AM">9:15 AM</option>
-		<option value="9:30 AM">9:30 AM</option>
-		<option value="9:45 AM">9:45 AM</option>
-
-		<option value="10:00 AM">10:00 AM</option>
-		<option value="10:15 AM">10:15 AM</option>
-		<option value="10:30 AM">10:30 AM</option>
-		<option value="10:45 AM">10:45 AM</option>
-
-		<option value="11:00 AM">11:00 AM</option>
-		<option value="11:15 AM">11:15 AM</option>
-		<option value="11:30 AM">11:30 AM</option>
-		<option value="11:45 AM">11:45 AM</option>
-
-		<option value="12:00 PM">12:00 PM</option>
-		<option value="12:15 PM">12:15 PM</option>
-		<option value="12:30 PM">12:30 PM</option>
-		<option value="12:45 PM">12:45 PM</option>
-
-		<option value="1:00 PM">1:00 PM</option>
-		<option value="1:15 PM">1:15 PM</option>
-		<option value="1:30 PM">1:30 PM</option>
-		<option value="1:45 PM">1:45 PM</option>
-
-		<option value="2:00 PM">2:00 PM</option>
-		<option value="2:15 PM">2:15 PM</option>
-		<option value="2:30 PM">2:30 PM</option>
-		<option value="2:45 PM">2:45 PM</option>
-
-		<option value="3:00 PM">3:00 PM</option>
-		<option value="3:15 PM">3:15 PM</option>
-		<option value="3:30 PM">3:30 PM</option>
-		<option value="3:45 PM">3:45 PM</option>
-
-		<option value="4:00 PM">4:00 PM</option>
-		<option value="4:15 PM">4:15 PM</option>
-		<option value="4:30 PM">4:30 PM</option>
-		<option value="4:45 PM">4:45 PM</option>
-
-		<option value="5:00 PM">5:00 PM</option>
-		<option value="5:15 PM">5:15 PM</option>
-		<option value="5:30 PM">5:30 PM</option>
-		<option value="5:45 PM">5:45 PM</option>
-
-		<option value="6:00 PM">6:00 PM</option>
-		<option value="6:15 PM">6:15 PM</option>
-		<option value="6:30 PM">6:30 PM</option>
-		<option value="6:45 PM">6:45 PM</option>
-
-		<option value="7:00 PM">7:00 PM</option>
-		<option value="7:15 PM">7:15 PM</option>
-		<option value="7:30 PM">7:30 PM</option>
-		<option value="7:45 PM">7:45 PM</option>
-
-		<option value="8:00 PM">8:00 PM</option>
-		<option value="8:15 PM">8:15 PM</option>
-		<option value="8:30 PM">8:30 PM</option>
-		<option value="8:45 PM">8:45 PM</option>
-
-		<option value="9:00 PM">9:00 PM</option>
-		<option value="9:15 PM">9:15 PM</option>
-		<option value="9:30 PM">9:30 PM</option>
-		<option value="9:45 PM">9:45 PM</option>
-
-		<option value="10:00 PM">10:00 PM</option>
-		<option value="10:15 PM">10:15 PM</option>
-		<option value="10:30 PM">10:30 PM</option>
-		<option value="10:45 PM">10:45 PM</option>
-
-		<option value="11:00 PM">11:00 PM</option>
-		<option value="11:15 PM">11:15 PM</option>
-		<option value="11:30 PM">11:30 PM</option>
-		<option value="11:45 PM">11:45 PM</option>
-	</select><br>
-	<input class="apptInfo" id="appointmentDate" placeHolder="Date?">
-	<input class="apptInfo" id="appointmentWith" placeholder="With?"/>
-	<input class="apptInfo" id="appointmentWhere" placeholder="Where?"/>
-	<button id="setAppointment">Click to Set</button>
-	<button id="stopScroll">STOP</button>
-	<hr>
-	<table class="appointmentSet"> 
-		<tbody>
-			<tr>
-				<td>
-					<label for="done">Done</label><input id="done" name="done" type="checkbox" value="done"></input>
-					<label for="canceled">Canceled</label><input id="canceled" name="canceled"type="checkbox" value"canceled"></input>
-				</td>
-				<td>
-					<ul>
-						<li class="displayApptInfo" id="aptTime"></li>
-						<li class="displayApptInfo" id="aptDate"></li>
-						<li class="displayApptInfo" id="aptWith"></li>
-						<li class="displayApptInfo" id="aptWhere"></li>
-					</ul>
-				</td>
-			</tr>
-		</tbody>
-	</table> 
-
--->
-<div class = "pure-g canvasContainer">
-  <div class = "pure-u-1-1">
-	<canvas id="ibmData" width="400" height="200"></canvas>
-  </div>
-</div>
-<hr>
-<div class = "pure-g showIcons">
-  <div class = "pure-u-1-5 boxy"><a href="mail.google.com"><img src = "assets/img/gmail_icon.png"/></a></div>
-  <div class = "pure-u-1-5 boxy">2</div>
-  <div class = "pure-u-1-5 boxy">3</div>
-  <div class = "pure-u-1-5 boxy">4</div>
-  <div class = "pure-u-1-5 boxy">5</div>
-</div>
-<hr>
-<form class="pure-form pure-g canvasContainer">
-  <div class ="pure-u-1-4">
-    <input type="email" class="pure-input-1" placeholder="Email">
-  </div>
-  <div class="pure-u-1-4">
-    <input type="text" class="pure-input-1" placeholder="Subject">
-  </div>
-  <div class="pure-u-1-2">
-    <textarea class="pure-input-1" placeholder="Textareas work too"></textarea>
-  </div>
-  <button type="submit" class="pure-button pure-input-1 pure-button-primary" action=''>Store to DB</button>
-  <button type="submit" class="pure-button pure-input-1 pure-button-primary" action=''>Send</button>
-
-  </div>
-</form>
-
-<script type='text/javascript' src="js/gmail.js">console.log('great.script')</script>
-
 </body>
 
 <!--

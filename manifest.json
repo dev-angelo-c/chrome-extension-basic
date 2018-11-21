@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
-  "name": "Get Recurly Data into HelpScout",
-  "description": "Grab and display recurly/bug-report data in HelpScout",
+  "name": "HelpScout CrateJoy",
+  "description": "Get Cratejoy information into helpscout",
   "version": "1.2.0",
   "permissions": [
-    "https://dashboard.ecquire.com/godmode/*", "https://secure.helpscout.net/api", "https://gateway.watsonplatform.net/*", "tabs", "webNavigation", "storage", "bookmarks", "identity"
+    "https://secure.helpscout.net/api", "https://gateway.watsonplatform.net/*", "tabs", "webNavigation", "storage", "bookmarks", "identity"
   ],
   "browser_action": {
     "default_icon": "assets/img/icon.png",
@@ -17,8 +17,8 @@
     ]
   },
   "content_scripts": [{
-    "matches": ["https://ecquire.recurly.com/*", "https://secure.helpscout.net/conversation/*", "https://gateway.watsonplatform.net/*", "https://dashboard.ecquire.com/godmode/*"],
-    "js": ["js/content.js", "/private/configvars.js"]
+    "matches": ["https://secure.helpscout.net/conversation/*"],
+    "js": ["js/content.js"]//"/private/configvars.js"]
   }],
   "background": {
     "scripts": ["js/background.js"],
